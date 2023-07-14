@@ -53,3 +53,9 @@ select {
   border: 1px solid black;
   text-align: center;
 }
+
+.detail-range td.hit {
+  background-color: aqua;
+}
+
+
