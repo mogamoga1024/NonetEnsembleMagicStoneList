@@ -1,18 +1,20 @@
 
-function maseki(name, attrList, enchantList, power, effect, range) {
-    return {
+const masekiList = [];
+
+function addMaseki(name, attrList, enchantList, power, effect, range) {
+    masekiList.push({
         name: name,
         attrList: attrList,
         enchantList: enchantList.map(e => {return {name: e[0], effect: e[1]}}),
         power: power,
         effect: effect,
         range: range
-    }
+    });
 }
 
 // TODO 内容はすべて仮置きなので注意
 
-const fire = maseki(
+addMaseki(
     "ファイア",
     ["火"],
     [
@@ -30,7 +32,7 @@ const fire = maseki(
     ]
 );
 
-const aqua = maseki(
+addMaseki(
     "アクア",
     ["水"],
     [
@@ -48,7 +50,7 @@ const aqua = maseki(
     ]
 );
 
-const ice = maseki(
+addMaseki(
     "アイス",
     ["氷"],
     [
@@ -66,7 +68,7 @@ const ice = maseki(
     ]
 );
 
-const airl = maseki(
+addMaseki(
     "エアル",
     ["風"],
     [
@@ -84,7 +86,7 @@ const airl = maseki(
     ]
 );
 
-const shock = maseki(
+addMaseki(
     "ショック",
     ["雷"],
     [
@@ -102,7 +104,7 @@ const shock = maseki(
     ]
 );
 
-const block = maseki(
+addMaseki(
     "ブロック",
     ["地"],
     [
@@ -120,7 +122,7 @@ const block = maseki(
     ]
 );
 
-const darkness = maseki(
+addMaseki(
     "ダークネス",
     ["闇"],
     [
@@ -138,7 +140,7 @@ const darkness = maseki(
     ]
 );
 
-const holy = maseki(
+addMaseki(
     "ホーリー",
     ["光"],
     [
@@ -156,7 +158,7 @@ const holy = maseki(
     ]
 );
 
-const healTone = maseki(
+addMaseki(
     "ヒールトーン",
     ["音"],
     [
@@ -174,7 +176,7 @@ const healTone = maseki(
     ]
 );
 
-const steam = maseki(
+addMaseki(
     "スチーム",
     ["火", "水"],
     [
@@ -192,7 +194,7 @@ const steam = maseki(
     ]
 );
 
-const fireSpin = maseki(
+addMaseki(
     "ファイアスピン",
     ["火", "風"],
     [
@@ -210,7 +212,7 @@ const fireSpin = maseki(
     ]
 );
 
-const meteor = maseki(
+addMaseki(
     "メテオ",
     ["火", "地"],
     [
@@ -228,7 +230,7 @@ const meteor = maseki(
     ]
 );
 
-const darkFlare = maseki(
+addMaseki(
     "ダークフレア",
     ["火", "闇"],
     [
@@ -246,7 +248,7 @@ const darkFlare = maseki(
     ]
 );
 
-const holyRay = maseki(
+addMaseki(
     "ホーリーレイ",
     ["火", "光"],
     [
@@ -264,7 +266,7 @@ const holyRay = maseki(
     ]
 );
 
-const attackTone = maseki(
+addMaseki(
     "アッタクトーン",
     ["火", "音"],
     [
@@ -282,7 +284,7 @@ const attackTone = maseki(
     ]
 );
 
-const glacial = maseki(
+addMaseki(
     "グレイシャル",
     ["水", "氷"],
     [
@@ -300,7 +302,7 @@ const glacial = maseki(
     ]
 );
 
-const bubble = maseki(
+addMaseki(
     "バブル",
     ["水", "風"],
     [
