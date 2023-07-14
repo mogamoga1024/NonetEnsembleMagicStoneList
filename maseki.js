@@ -282,7 +282,23 @@ const attackTone = maseki(
     ]
 );
 
-// todo
+const glacial = maseki(
+    "グレイシャル",
+    ["水", "氷"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
 
 const bubble = maseki(
     "バブル",
