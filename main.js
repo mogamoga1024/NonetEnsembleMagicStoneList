@@ -9,9 +9,15 @@ const App = {
                 airl,
                 shock,
                 block,
-                holy,
                 darkness,
+                holy,
                 healTone,
+                steam,
+                fireSpin,
+                meteor,
+                darkFlare,
+                holyRay,
+                attackTone,
                 bubble,
             ]
         }

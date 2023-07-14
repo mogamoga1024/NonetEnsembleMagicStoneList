@@ -120,9 +120,9 @@ const block = maseki(
     ]
 );
 
-const holy = maseki(
-    "ホーリー",
-    ["光"],
+const darkness = maseki(
+    "ダークネス",
+    ["闇"],
     [
         ["hoge", "hogehoge"],
         ["hoge", "hogehoge"],
@@ -138,9 +138,9 @@ const holy = maseki(
     ]
 );
 
-const darkness = maseki(
-    "ダークネス",
-    ["闇"],
+const holy = maseki(
+    "ホーリー",
+    ["光"],
     [
         ["hoge", "hogehoge"],
         ["hoge", "hogehoge"],
@@ -173,6 +173,116 @@ const healTone = maseki(
         [0, 0, 0, 0, 0]
     ]
 );
+
+const steam = maseki(
+    "スチーム",
+    ["火", "水"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
+
+const fireSpin = maseki(
+    "ファイアスピン",
+    ["火", "風"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
+
+const meteor = maseki(
+    "メテオ",
+    ["火", "地"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
+
+const darkFlare = maseki(
+    "ダークフレア",
+    ["火", "闇"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
+
+const holyRay = maseki(
+    "ホーリーレイ",
+    ["火", "光"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
+
+const attackTone = maseki(
+    "アッタクトーン",
+    ["火", "音"],
+    [
+        ["hoge", "hogehoge"],
+        ["hoge", "hogehoge"],
+    ],
+    42,
+    "hogehoge",
+    [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+    ]
+);
+
+// todo
 
 const bubble = maseki(
     "バブル",
