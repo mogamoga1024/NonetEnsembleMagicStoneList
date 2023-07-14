@@ -3,8 +3,16 @@ const App = {
     data() {
         return {
             maeskiList: [
+                fire,
+                aqua,
+                ice,
+                airl,
+                shock,
+                block,
+                holy,
+                darkness,
+                healTone,
                 bubble,
-                bubble
             ]
         }
     },
