@@ -3,7 +3,7 @@ function maseki(name, attrList, enchantList, power, effect, range) {
     return {
         name: name,
         attrList: attrList,
-        enchantList: enchantList,
+        enchantList: enchantList.map(e => {return {name: e[0], effect: e[1]}}),
         power: power,
         effect: effect,
         range: range
