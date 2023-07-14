@@ -14,5 +14,12 @@
 
 .detail-range {
   display: inline-block;
+  border-collapse: collapse;
 }
 
+.detail-range td {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  text-align: center;
+}
