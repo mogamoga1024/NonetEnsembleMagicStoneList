@@ -1,6 +1,15 @@
 
 .detail {
+  display: inline-block;
   margin-top: 10px;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.detail-title {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
 .detail-item {
