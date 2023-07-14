@@ -27,7 +27,11 @@ select {
 .detail-title {
   display: inline-block;
   font-size: 1.2rem;
-  margin-right: 10px;
+}
+
+.detail-attr {
+  display: inline-block;
+  margin-left: 8px;
 }
 
 .detail-item {
