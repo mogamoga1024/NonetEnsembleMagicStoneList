@@ -1,4 +1,21 @@
 
+body {
+  padding: 8px;
+  font-size: 16px;
+}
+
+select {
+  font-size: 16px;
+}
+
+.search-item {
+  display: inline-block;
+  width: 60px;
+  margin-right: 10px;
+  text-align: right;
+  vertical-align: top;
+}
+
 .detail {
   display: inline-block;
   margin-top: 10px;
@@ -18,7 +35,6 @@
   margin-right: 10px;
   text-align: right;
   vertical-align: top;
-  /* background-color: red; */
 }
 
 .detail-range {
