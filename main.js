@@ -2,12 +2,15 @@
 const App = {
     data() {
         return {
-
+            maeskiList: [
+                bubble,
+                bubble
+            ]
         }
     },
     methods: {
-        
+
     }
 };
 
-const app = Vue.createApp(App).mount("#app");
+Vue.createApp(App).mount("#app");
