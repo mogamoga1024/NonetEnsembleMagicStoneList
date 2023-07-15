@@ -18,7 +18,7 @@ select {
 
 .detail {
   display: inline-block;
-  width: 230px;
+  width: 240px;
   margin-top: 10px;
   margin-right: 8px;
   padding: 8px;
@@ -42,6 +42,11 @@ select {
   margin-right: 10px;
   text-align: right;
   vertical-align: top;
+}
+
+.detail-desc {
+  display: inline-block;
+  width: calc(100% - 80px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
 }
 
 .detail-range {
