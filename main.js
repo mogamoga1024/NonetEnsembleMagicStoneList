@@ -12,7 +12,7 @@ const App = {
         const tmpEffectList = this.originalMasekiList.map(e => {
             return {
                 value: e.enchantList[0].name, 
-                display: e.enchantList.map(f => f.name).join("/"),
+                display: "[" + e.attrList.join("/") + "] " + e.enchantList.map(f => f.name).join("/"),
                 isBuff: e.attrList.length > 1 && e.attrList.includes("音")
             }
         });
