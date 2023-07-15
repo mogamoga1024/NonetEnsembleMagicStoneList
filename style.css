@@ -18,7 +18,8 @@ select {
 
 .detail {
   display: inline-block;
-  width: 240px;
+  width: 290px;
+  /* max-width: 290px; */
   margin-top: 10px;
   margin-right: 8px;
   padding: 8px;
