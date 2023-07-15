@@ -26,6 +26,11 @@
         <option value="音">音</option>
       </select>
       <br>
+      <label class="search-item" for="name">名称</label><!--
+      --><select name="name" v-model="selectedName" @change="onChangeName">
+        <option v-for="maseki in searchMasekiList" :value="maseki.name">{{maseki.displayName}}</option>
+      </select>
+      <br>
       <label class="search-item" for="effect-group">効果分類</label><!--
       --><select name="effect-group">
         <option value="all">ALL</option>
@@ -37,7 +42,7 @@
       <br>
       <label class="search-item" for="effect">効果詳細</label><!--
       --><select name="effect" v-model="selectedEffect" @change="onChangeEffect">
-        <option v-for="effect in effectList" :value="effect.value">{{effect.display}}</option>
+        <option v-for="maseki in searchMasekiList" :value="maseki.name">{{maseki.displayEffect}}</option>
       </select>
       <br>
       <label class="search-item" for="sort">並び順</label><!--

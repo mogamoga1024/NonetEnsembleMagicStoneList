@@ -5,8 +5,9 @@ const App = {
             HIT: HIT, HIT_BASE: HIT_BASE, HIT_ENDLESS: HIT_ENDLESS,
             originalMasekiList: [],
             masekiList: [],
-            effectList: [],
+            searchMasekiList: [],
             selectedAttr: "all",
+            selectedName: "all",
             selectedEffect: "all",
         }
     },
@@ -23,10 +24,11 @@ const App = {
         this.originalMasekiList = [...masekiList];
         this.masekiList = this.originalMasekiList;
 
-        const tmpEffectList = this.masekiList.map(e => {
+        const tmpMasekiList = this.masekiList.map(e => {
             return {
-                value: e.enchantList[0].name, 
-                display: (function() {
+                name: e.name, 
+                displayName: "[" + e.attrList.join("/") + "] " + e.name,
+                displayEffect: (function() {
                     let enchant = "";
                     if (e.enchantList.length > 1 && e.enchantList[0].name === e.enchantList[1].name) {
                         enchant = e.enchantList[0].name;
@@ -39,7 +41,7 @@ const App = {
             }
         });
 
-        this.effectList = [{value: "all", display: "ALL"}].concat(tmpEffectList);
+        this.searchMasekiList = [{name: "all", displayName: "ALL", displayEffect: "ALL"}].concat(tmpMasekiList);
     },
     methods: {
         onChangeAttr(e) {
@@ -50,17 +52,27 @@ const App = {
             else {
                 this.masekiList = this.originalMasekiList.filter(e => e.attrList.includes(attr));
             }
+            this.selectedName = "all";
+            this.selectedEffect = "all";
+        },
+        onChangeName(e) {
+            this.findMasekiByName(e);
+            this.selectedAttr = "all";
             this.selectedEffect = "all";
         },
         onChangeEffect(e) {
-            const effect = e.target.value;
-            if (effect === "all") {
+            this.findMasekiByName(e);
+            this.selectedAttr = "all";
+            this.selectedName = "all";
+        },
+        findMasekiByName(e) {
+            const name = e.target.value;
+            if (name === "all") {
                 this.masekiList = this.originalMasekiList;
             }
             else {
-                this.masekiList = this.originalMasekiList.filter(e => e.enchantList[0].name === effect);
+                this.masekiList = this.originalMasekiList.filter(e => e.name === name);
             }
-            this.selectedAttr = "all";
         },
     }
 };
