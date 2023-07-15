@@ -10,8 +10,23 @@ const App = {
     },
     created() {
         const tmpEffectList = this.originalMasekiList.map(e => {
-            return {value: e.enchantList[0].name, display: e.enchantList.map(f => f.name).join("/")}
+            return {
+                value: e.enchantList[0].name, 
+                display: e.enchantList.map(f => f.name).join("/"),
+                isBuff: e.attrList.length > 1 && e.attrList.includes("音")
+            }
         });
+
+        tmpEffectList.sort((a, b) => {
+            if (a.isBuff && !b.isBuff) {
+                return 1;
+            }
+            else if (!a.isBuff && b.isBuff) {
+                return -1;
+            }
+            return 0;
+        });
+
         this.effectList = [{value: "all", display: "ALL"}].concat(tmpEffectList);
     },
     methods: {
