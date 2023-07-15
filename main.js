@@ -26,7 +26,16 @@ const App = {
         const tmpEffectList = this.masekiList.map(e => {
             return {
                 value: e.enchantList[0].name, 
-                display: "[" + e.attrList.join("/") + "] " + e.enchantList.map(f => f.name).join("/"),
+                display: (function() {
+                    let enchant = "";
+                    if (e.enchantList.length > 1 && e.enchantList[0].name === e.enchantList[1].name) {
+                        enchant = e.enchantList[0].name;
+                    }
+                    else {
+                        enchant = e.enchantList.map(f => f.name).join("/");
+                    }
+                    return "[" + e.attrList.join("/") + "] " + enchant;
+                })(),
             }
         });
 
