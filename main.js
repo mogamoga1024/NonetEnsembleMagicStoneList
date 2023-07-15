@@ -39,6 +39,15 @@ const App = {
                 this.masekiList = this.originalMasekiList.filter(e => e.attrList.includes(attr));
             }
         },
+        onChangeEffect(e) {
+            const effect = e.target.value;
+            if (effect === "all") {
+                this.masekiList = this.originalMasekiList;
+            }
+            else {
+                this.masekiList = this.originalMasekiList.filter(e => e.enchantList[0].name === effect);
+            }
+        },
     }
 };
 
