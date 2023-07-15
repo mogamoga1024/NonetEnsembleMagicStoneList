@@ -6,6 +6,9 @@ const HIT_ENDLESS = 3;
 const masekiList = [];
 
 function addMaseki(name, attrList, enchantList, power, effect, range) {
+    if (enchantList.length === 1) {
+        enchantList.push(enchantList[0]);
+    }
     masekiList.push({
         name: name,
         attrList: attrList,

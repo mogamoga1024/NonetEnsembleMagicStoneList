@@ -45,7 +45,7 @@ const App = {
                 name: e.name, 
                 display: (function() {
                     let enchant = "";
-                    if (e.enchantList.length > 1 && e.enchantList[0].name === e.enchantList[1].name) {
+                    if (e.enchantList[0].name === e.enchantList[1].name) {
                         enchant = e.enchantList[0].name;
                     }
                     else {
