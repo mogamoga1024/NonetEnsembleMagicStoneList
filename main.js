@@ -11,7 +11,7 @@ const App = {
         }
     },
     created() {
-        this.originalMasekiList = masekiList.sort((a, b) => {
+        masekiList.sort((a, b) => {
             if (a.isBuff && !b.isBuff) {
                 return 1;
             }
@@ -20,6 +20,7 @@ const App = {
             }
             return 0;
         });
+        this.originalMasekiList = [...masekiList];
         this.masekiList = this.originalMasekiList;
 
         const tmpEffectList = this.masekiList.map(e => {
