@@ -65,10 +65,9 @@
       <div>
         <div class="detail-item">魔法範囲</div>
         <table class="detail-range">
-          <tr v-for="(rangeRow, row) in maseki.range">
-            <td v-for="(hit, col) in rangeRow" :class="{hit: hit > 0}">
-              <template v-if="row === 2 && col === 2">@</template>
-              <template v-else-if="hit > 1">∞</template>
+          <tr v-for="rangeRow in maseki.range">
+            <td v-for="hit in rangeRow" :class="{hit: hit > 0}">
+              <template v-if="hit > 1">∞</template>
             </td>
           </tr>
         </table>
