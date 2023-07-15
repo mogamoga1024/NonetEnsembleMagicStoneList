@@ -11,22 +11,8 @@
 <body>
   <div id="app">
     <div>
-      <label class="search-item" for="attr1">属性1</label><!--
-      --><select name="attr1">
-        <option value="all">ALL</option>
-        <option value="火">火</option>
-        <option value="水">水</option>
-        <option value="氷">氷</option>
-        <option value="風">風</option>
-        <option value="雷">雷</option>
-        <option value="地">地</option>
-        <option value="闇">闇</option>
-        <option value="光">光</option>
-        <option value="音">音</option>
-      </select>
-      <br>
-      <label class="search-item" for="attr2">属性2</label><!--
-      --><select name="attr2">
+      <label class="search-item" for="attr">属性</label><!--
+      --><select name="attr" @change="onChangeAttr">
         <option value="all">ALL</option>
         <option value="火">火</option>
         <option value="水">水</option>
@@ -56,7 +42,7 @@
     </div>
     ※ 魔法範囲の@はプレイヤーの位置。赤色があるものは赤色を中心に発動位置を自由に決めることができる。
     <br>
-    <div class="detail" v-for="maseki in maeskiList">
+    <div class="detail" v-for="maseki in masekiList">
       <div class="detail-title">{{maseki.name}}</div>
       <div class="detail-attr" v-for="attr in maseki.attrList">{{attr}}</div><br>
       <div v-for="enchant in maseki.enchantList">
