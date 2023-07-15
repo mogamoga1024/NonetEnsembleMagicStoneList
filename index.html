@@ -27,10 +27,7 @@
       <br>
       <label class="search-item" for="effect">効果</label><!--
       --><select name="effect">
-        <option value="all">ALL</option>
-        <option value="donsoku">鈍足/鈍足耐性</option>
-        <option value="touketu">凍結/凍結耐性</option>
-        <option value="konran">混乱/混乱耐性</option>
+        <option v-for="effect in effectList" :value="effect.value">{{effect.display}}</option>
       </select>
       <br>
       <label class="search-item" for="sort">並び順</label><!--
