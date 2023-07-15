@@ -18,10 +18,12 @@ select {
 
 .detail {
   display: inline-block;
+  width: 230px;
   margin-top: 10px;
   margin-right: 8px;
   padding: 8px;
   border: 1px solid black;
+  vertical-align: top;
 }
 
 .detail-title {
