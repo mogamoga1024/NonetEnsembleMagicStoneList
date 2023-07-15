@@ -60,4 +60,6 @@ select {
   background-color: aqua;
 }
 
-
+.detail-range td.base {
+  background-color: tomato;
+}

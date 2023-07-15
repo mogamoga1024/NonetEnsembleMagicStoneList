@@ -1,4 +1,8 @@
 
+const HIT = 1;
+const HIT_BASE = 2;
+const HIT_ENDLESS = 3;
+
 const masekiList = [];
 
 function addMaseki(name, attrList, enchantList, power, effect, range) {
@@ -11,8 +15,6 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         range: range
     });
 }
-
-// TODO 内容はすべて仮置きなので注意
 
 addMaseki(
     "ファイア",

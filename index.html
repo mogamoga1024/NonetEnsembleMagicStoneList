@@ -54,8 +54,7 @@
         <option value="range">範囲</option>
       </select>
     </div>
-    ※ 魔法範囲の@がついているものは、そこを中心に発動位置を自由に決めることができる。
-    逆についていないものは主人公を中心に発動する。
+    ※ 魔法範囲の@はプレイヤーの位置。赤色があるものは赤色を中心に発動位置を自由に決めることができる。
     <br>
     <div class="detail" v-for="maseki in maeskiList">
       <div class="detail-title">{{maseki.name}}</div>
@@ -68,10 +67,10 @@
       <div>
         <div class="detail-item">魔法範囲</div>
         <table class="detail-range">
-          <tr v-for="rangeRow in maseki.range">
-            <td v-for="hit in rangeRow" :class="{hit: hit > 0}">
-              <template v-if="hit === 2">@</template>
-              <template v-else-if="hit === 3">∞</template>
+          <tr v-for="(rangeRow, row) in maseki.range">
+            <td v-for="(hit, col) in rangeRow" :class="{hit: hit === HIT || hit === HIT_ENDLESS, base: hit === HIT_BASE}">
+              <template v-if="row === col && row === (rangeRow.length - 1) / 2">@</template>
+              <template v-else-if="hit === HIT_ENDLESS">∞</template>
             </td>
           </tr>
         </table>
