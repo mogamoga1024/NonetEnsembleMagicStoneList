@@ -12,7 +12,7 @@
   <div id="app">
     <div>
       <label class="search-item" for="attr">属性</label><!--
-      --><select name="attr" @change="onChangeAttr">
+      --><select name="attr" v-model="selectedAttr" @change="onChangeAttr">
         <option value="all">ALL</option>
         <option value="火">火</option>
         <option value="水">水</option>
@@ -26,7 +26,7 @@
       </select>
       <br>
       <label class="search-item" for="effect">効果</label><!--
-      --><select name="effect" @change="onChangeEffect">
+      --><select name="effect" v-model="selectedEffect" @change="onChangeEffect">
         <option v-for="effect in effectList" :value="effect.value">{{effect.display}}</option>
       </select>
       <br>

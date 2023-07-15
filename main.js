@@ -6,6 +6,8 @@ const App = {
             originalMasekiList: masekiList,
             masekiList: masekiList,
             effectList: [],
+            selectedAttr: "all",
+            selectedEffect: "all",
         }
     },
     created() {
@@ -38,6 +40,7 @@ const App = {
             else {
                 this.masekiList = this.originalMasekiList.filter(e => e.attrList.includes(attr));
             }
+            this.selectedEffect = "all";
         },
         onChangeEffect(e) {
             const effect = e.target.value;
@@ -47,6 +50,7 @@ const App = {
             else {
                 this.masekiList = this.originalMasekiList.filter(e => e.enchantList[0].name === effect);
             }
+            this.selectedAttr = "all";
         },
     }
 };
