@@ -60,14 +60,16 @@
       <div><div class="detail-item">魔法効果</div><div class="detail-desc">{{maseki.effect}}</div></div>
       <div>
         <div class="detail-item">魔法範囲</div>
-        <table class="detail-range">
-          <tr v-for="(rangeRow, row) in maseki.range">
-            <td v-for="(hit, col) in rangeRow" :class="{hit: hit === HIT || hit === HIT_ENDLESS, base: hit === HIT_BASE}">
-              <template v-if="row === col && row === (rangeRow.length - 1) / 2">@</template>
-              <template v-else-if="hit === HIT_ENDLESS">∞</template>
-            </td>
-          </tr>
-        </table>
+        <div class="detail-range">
+          <table>
+            <tr v-for="(rangeRow, row) in maseki.range">
+              <td v-for="(hit, col) in rangeRow" :class="{hit: hit === HIT || hit === HIT_ENDLESS, base: hit === HIT_BASE}">
+                <template v-if="row === col && row === (rangeRow.length - 1) / 2">@</template>
+                <template v-else-if="hit === HIT_ENDLESS">∞</template>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
