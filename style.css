@@ -20,7 +20,7 @@ select {
   display: inline-block;
   width: 290px;
   /* max-width: 290px; */
-  height: 267px;
+  min-height: 267px;
   margin-top: 10px;
   margin-right: 8px;
   padding: 8px;
