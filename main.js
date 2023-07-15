@@ -3,23 +3,15 @@ const App = {
     data() {
         return {
             HIT: HIT, HIT_BASE: HIT_BASE, HIT_ENDLESS: HIT_ENDLESS,
-            originalMasekiList: masekiList,
-            masekiList: masekiList,
+            originalMasekiList: [],
+            masekiList: [],
             effectList: [],
             selectedAttr: "all",
             selectedEffect: "all",
         }
     },
     created() {
-        const tmpEffectList = this.originalMasekiList.map(e => {
-            return {
-                value: e.enchantList[0].name, 
-                display: "[" + e.attrList.join("/") + "] " + e.enchantList.map(f => f.name).join("/"),
-                isBuff: e.attrList.length > 1 && e.attrList.includes("音")
-            }
-        });
-
-        tmpEffectList.sort((a, b) => {
+        this.originalMasekiList = masekiList.sort((a, b) => {
             if (a.isBuff && !b.isBuff) {
                 return 1;
             }
@@ -27,6 +19,14 @@ const App = {
                 return -1;
             }
             return 0;
+        });
+        this.masekiList = this.originalMasekiList;
+
+        const tmpEffectList = this.masekiList.map(e => {
+            return {
+                value: e.enchantList[0].name, 
+                display: "[" + e.attrList.join("/") + "] " + e.enchantList.map(f => f.name).join("/"),
+            }
         });
 
         this.effectList = [{value: "all", display: "ALL"}].concat(tmpEffectList);

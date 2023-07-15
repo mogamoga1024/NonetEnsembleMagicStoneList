@@ -12,7 +12,8 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         enchantList: enchantList.map(e => {return {name: e[0], effect: e[1]}}),
         power: power,
         effect: effect,
-        range: range
+        range: range,
+        isBuff: attrList.length > 1 && attrList.includes("音")
     });
 }
 
@@ -726,7 +727,7 @@ addMaseki(
         ["光の加護", "瀕死で明かり"],
     ],
     0,
-    "明かり",
+    "フロアが明るくなる",
     [
         [1, 1, 1],
         [1, 1, 1],
