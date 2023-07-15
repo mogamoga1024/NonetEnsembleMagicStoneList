@@ -26,7 +26,16 @@
         <option value="音">音</option>
       </select>
       <br>
-      <label class="search-item" for="effect">効果</label><!--
+      <label class="search-item" for="effect-group">効果分類</label><!--
+      --><select name="effect-group">
+        <option value="all">ALL</option>
+        <option value="単属性">単属性</option>
+        <option value="状態異常">状態異常</option>
+        <option value="バフ">バフ</option>
+        <option value="その他">その他</option>
+      </select>
+      <br>
+      <label class="search-item" for="effect">効果詳細</label><!--
       --><select name="effect" v-model="selectedEffect" @change="onChangeEffect">
         <option v-for="effect in effectList" :value="effect.value">{{effect.display}}</option>
       </select>
@@ -38,6 +47,7 @@
         <option value="range">範囲</option>
       </select>
     </div>
+    <hr>
     ※ 魔法範囲の@はプレイヤーの位置。赤色があるものは赤色を中心に発動位置を自由に決めることができる。
     <br>
     <div class="detail" v-for="maseki in masekiList">
