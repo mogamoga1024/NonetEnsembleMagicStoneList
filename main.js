@@ -5,7 +5,8 @@ const App = {
             HIT: HIT, HIT_BASE: HIT_BASE, HIT_ENDLESS: HIT_ENDLESS,
             originalMasekiList: [],
             masekiList: [],
-            searchMasekiList: [],
+            nameList: [],
+            effectList: [],
             selectedAttr: "all",
             selectedName: "all",
             selectedEffect: "all",
@@ -24,11 +25,25 @@ const App = {
         this.originalMasekiList = [...masekiList];
         this.masekiList = this.originalMasekiList;
 
-        const tmpMasekiList = this.masekiList.map(e => {
+        const tmpNameList = this.masekiList.map(e => {
+            return {
+                name: e.name,
+                display: e.name
+            }
+        }).sort((a, b) => {
+            if (a.name < b.name) {
+                return -1;
+            }
+            else if (a.name > b.name) {
+                return 1;
+            }
+            return 0;
+        });
+
+        const tmpEffectList = this.masekiList.map(e => {
             return {
                 name: e.name, 
-                displayName: "[" + e.attrList.join("/") + "] " + e.name,
-                displayEffect: (function() {
+                display: (function() {
                     let enchant = "";
                     if (e.enchantList.length > 1 && e.enchantList[0].name === e.enchantList[1].name) {
                         enchant = e.enchantList[0].name;
@@ -41,7 +56,8 @@ const App = {
             }
         });
 
-        this.searchMasekiList = [{name: "all", displayName: "ALL", displayEffect: "ALL"}].concat(tmpMasekiList);
+        this.nameList = [{name: "all", display: "ALL"}].concat(tmpNameList);
+        this.effectList = [{name: "all", display: "ALL"}].concat(tmpEffectList);
     },
     methods: {
         onChangeAttr(e) {
