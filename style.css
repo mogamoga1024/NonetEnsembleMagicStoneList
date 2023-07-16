@@ -16,6 +16,11 @@ select {
   vertical-align: top;
 }
 
+.attr-button {
+  display: inline-block;
+  margin-right: 8px;
+}
+
 .detail {
   display: inline-block;
   width: 305px;

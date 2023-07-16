@@ -12,8 +12,8 @@
   <div id="app">
     <h1>NonetEnsemble ～魔法仕掛けの迷宮～：魔石一覧</h1>
     <div>
-      <label class="search-item" for="attr">属性</label><!--
-      --><select name="attr" v-model="selectedAttr" @change="onChangeAttr">
+      <!-- <label class="search-item" for="attr">属性</label>
+      <select name="attr" v-model="selectedAttr" @change="onChangeAttr">
         <option value="all">ALL</option>
         <option value="火">火</option>
         <option value="水">水</option>
@@ -24,7 +24,18 @@
         <option value="光">光</option>
         <option value="闇">闇</option>
         <option value="音">音</option>
-      </select>
+      </select> -->
+      <label class="search-item">属性</label><!--
+      --><div class="attr-button">ALL</div>
+      <div class="attr-button">火</div>
+      <div class="attr-button">水</div>
+      <div class="attr-button">氷</div>
+      <div class="attr-button">風</div>
+      <div class="attr-button">雷</div>
+      <div class="attr-button">地</div>
+      <div class="attr-button">光</div>
+      <div class="attr-button">闇</div>
+      <div class="attr-button">音</div>
       <br>
       <label class="search-item" for="name">名称</label><!--
       --><select name="name" v-model="selectedName" @change="onChangeName">
