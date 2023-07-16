@@ -118,25 +118,14 @@ const App = {
                 
             }
         },
-        // onChangeAttr(e) {
-        //     const attr = e.target.value;
-        //     if (attr === "all") {
-        //         this.masekiList = this.originalMasekiList;
-        //     }
-        //     else {
-        //         this.masekiList = this.originalMasekiList.filter(e => e.attrList.includes(attr));
-        //     }
-        //     this.selectedName = "all";
-        //     this.selectedEffect = "all";
-        // },
         onChangeName(e) {
             this.findMasekiByName(e);
-            this.resetIsSelectedAttr();
+            // this.resetIsSelectedAttr();
             this.selectedEffect = "all";
         },
         onChangeEffect(e) {
             this.findMasekiByName(e);
-            this.resetIsSelectedAttr();
+            // this.resetIsSelectedAttr();
             this.selectedName = "all";
         },
         resetIsSelectedAttr() {
