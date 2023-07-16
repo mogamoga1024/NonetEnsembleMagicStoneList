@@ -76,15 +76,15 @@ const App = {
         this.effectList = [{name: "all", display: "ALL"}].concat(tmpEffectList);
     },
     methods: {
-        onClickAttr(attr) {
-            if (attr === "all") {
+        onClickAttr(key) {
+            if (key === "all") {
                 if (this.isSelectedAttr["all"]) {
                     return;
                 }
                 this.resetIsSelectedAttr();
             }
             else {
-                this.isSelectedAttr[attr] = !this.isSelectedAttr[attr];
+                this.isSelectedAttr[key] = !this.isSelectedAttr[key];
 
                 if (this.attrList.every(attr => !this.isSelectedAttr[attr.key])) {
                     this.isSelectedAttr["all"] = true;
@@ -94,11 +94,28 @@ const App = {
                 }
             }
 
-            if (attr === "all") {
+            if (this.isSelectedAttr["all"]) {
                 this.masekiList = this.originalMasekiList;
             }
             else {
-                // todo
+                let selectedAttrList = [];
+                this.attrList.forEach(attr => {
+                    if (this.isSelectedAttr[attr.key]) {
+                        selectedAttrList.push(attr.name);
+                    }
+                });
+
+                if (selectedAttrList.length === 1) {
+                    this.masekiList = this.originalMasekiList.filter(maseki => {
+                        return maseki.attrList.some(attr => selectedAttrList.includes(attr))
+                    });
+                }
+                else {
+                    this.masekiList = this.originalMasekiList.filter(maseki => {
+                        return maseki.attrList.every(attr => selectedAttrList.includes(attr))
+                    });
+                }
+                
             }
         },
         // onChangeAttr(e) {
