@@ -97,27 +97,7 @@ const App = {
             this.selectedEffect = "all";
         },
         onChangeEffectGroup(e) {
-            switch (e.target.value) {
-                case "all":
-                    
-                    break;
-                case "single":
-                
-                    break;
-                case "multi":
-                
-                    break;
-                case "abnormal":
-                
-                    break;
-                case "buff":
-                
-                    break;
-                case "etc":
-                
-                    break;
-            }
-            // todo
+            this.findMasekiListByEffectGroup(e.target.value);
         },
         onChangeEffect(e) {
             this.findMasekiByName(e.target.value);
@@ -172,6 +152,28 @@ const App = {
                 this.masekiList = this.attrCondMasekiList.filter(e => e.name === name);
             }
         },
+        findMasekiListByEffectGroup(effectGroup) {
+            switch (effectGroup) {
+                case "all":
+                    this.masekiList = this.attrCondMasekiList;
+                    break;
+                case "single":
+                    this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.attrList.length === 1);
+                    break;
+                case "multi":
+                    this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.attrList.length > 1);
+                    break;
+                case "abnormal":
+                    this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.isAbnormal);
+                    break;
+                case "buff":
+                    this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.isBuff);
+                    break;
+                case "etc":
+                    this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.isEtc);
+                    break;
+            }
+        }
     }
 };
 
