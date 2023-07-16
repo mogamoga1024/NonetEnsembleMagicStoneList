@@ -9,15 +9,25 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
     if (enchantList.length === 1) {
         enchantList.push(enchantList[0]);
     }
-    masekiList.push({
+
+    const maseki = {
         name: name,
         attrList: attrList,
         enchantList: enchantList.map(e => {return {name: e[0], effect: e[1]}}),
         power: power,
         effect: effect,
         range: range,
-        isBuff: attrList.length > 1 && attrList.includes("音")
-    });
+        isAbnormal: attrList.length > 1 && /耐性/.test(enchantList[1][0]),
+        isBuff: /従者|試練/.test(enchantList[0][0]),
+        isEtc: false
+    };
+
+    // 例外的な魔石は個別でフラグを変える
+    if (maseki.name === "メテオ") {
+        maseki.isEtc = true;
+    }
+
+    masekiList.push(maseki);
 }
 
 addMaseki(
