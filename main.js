@@ -120,12 +120,10 @@ const App = {
         },
         onChangeName(e) {
             this.findMasekiByName(e);
-            // this.resetIsSelectedAttr();
             this.selectedEffect = "all";
         },
         onChangeEffect(e) {
             this.findMasekiByName(e);
-            // this.resetIsSelectedAttr();
             this.selectedName = "all";
         },
         resetIsSelectedAttr() {
