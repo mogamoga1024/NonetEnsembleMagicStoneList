@@ -32,6 +32,7 @@ select {
   padding: 0 4px;
   border-radius: 12%;
   border: 1px solid black;
+  font-weight: 600;
   cursor: pointer;
   user-select: none;
 }
@@ -47,93 +48,93 @@ select {
 }
 
 #btn-hi {
-  color: black;
-  border-color: black;
+  color: red;
+  border-color: red;
 }
 
 #btn-hi.selected {
   color: white;
-  background-color: black;
+  background-color: red;
 }
 
 #btn-mizu {
-  color: black;
-  border-color: black;
+  color: blue;
+  border-color: blue;
 }
 
 #btn-mizu.selected {
   color: white;
-  background-color: black;
+  background-color: blue;
 }
 
 #btn-koori {
-  color: black;
-  border-color: black;
+  color: royalblue;
+  border-color: royalblue;
 }
 
 #btn-koori.selected {
   color: white;
-  background-color: black;
+  background-color: royalblue;
 }
 
 #btn-kaze {
-  color: black;
-  border-color: black;
+  color: green;
+  border-color: green;
 }
 
 #btn-kaze.selected {
   color: white;
-  background-color: black;
+  background-color: green;
 }
 
 #btn-kaminari {
-  color: black;
-  border-color: black;
+  color: darkorange;
+  border-color: darkorange;
 }
 
 #btn-kaminari.selected {
   color: white;
-  background-color: black;
+  background-color: darkorange;
 }
 
 #btn-ti {
-  color: black;
-  border-color: black;
+  color: maroon;
+  border-color: maroon;
 }
 
 #btn-ti.selected {
   color: white;
-  background-color: black;
+  background-color: maroon;
 }
 
 #btn-hikari {
-  color: black;
-  border-color: black;
+  color: dimgray;
+  border-color: dimgray;
 }
 
 #btn-hikari.selected {
   color: white;
-  background-color: black;
+  background-color: silver;
 }
 
 #btn-yami {
-  color: black;
-  border-color: black;
+  color: purple;
+  border-color: purple;
 }
 
 #btn-yami.selected {
   color: white;
-  background-color: black;
+  background-color: purple;
 }
 
 #btn-oto {
-  color: black;
-  border-color: black;
+  color: deeppink;
+  border-color: deeppink;
 }
 
 #btn-oto.selected {
   color: white;
-  background-color: black;
+  background-color: deeppink;
 }
 
 .detail {
