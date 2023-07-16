@@ -49,6 +49,7 @@ const App = {
     methods: {
         onClickAttr(key) {
             if (key === "all") {
+                // ALLが選択されている状態でALLを押して未選択にさせない。
                 if (this.isSelectedAttr["all"]) {
                     return;
                 }
@@ -90,6 +91,7 @@ const App = {
 
             this.attrCondMasekiList = this.masekiList;
             
+            this.findMasekiListByEffectGroup(this.selectedEffectGroup);
             this.nameList = this.createNameList();
             this.effectList = this.createEffectList();
         },
@@ -174,6 +176,8 @@ const App = {
                     this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.isEtc);
                     break;
             }
+            this.nameList = this.createNameList();
+            this.effectList = this.createEffectList();
         }
     }
 };
