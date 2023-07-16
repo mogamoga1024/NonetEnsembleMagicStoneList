@@ -52,7 +52,7 @@ select {
   border-color: red;
 }
 
-#btn-hi.selected {
+#btn-hi.selected, .attr-hi {
   color: white;
   background-color: red;
 }
@@ -62,7 +62,7 @@ select {
   border-color: blue;
 }
 
-#btn-mizu.selected {
+#btn-mizu.selected, .attr-mizu {
   color: white;
   background-color: blue;
 }
@@ -72,7 +72,7 @@ select {
   border-color: royalblue;
 }
 
-#btn-koori.selected {
+#btn-koori.selected, .attr-koori {
   color: white;
   background-color: royalblue;
 }
@@ -82,7 +82,7 @@ select {
   border-color: green;
 }
 
-#btn-kaze.selected {
+#btn-kaze.selected, .attr-kaze {
   color: white;
   background-color: green;
 }
@@ -92,7 +92,7 @@ select {
   border-color: darkorange;
 }
 
-#btn-kaminari.selected {
+#btn-kaminari.selected, .attr-kaminari {
   color: white;
   background-color: darkorange;
 }
@@ -102,7 +102,7 @@ select {
   border-color: maroon;
 }
 
-#btn-ti.selected {
+#btn-ti.selected, .attr-ti {
   color: white;
   background-color: maroon;
 }
@@ -112,7 +112,7 @@ select {
   border-color: dimgray;
 }
 
-#btn-hikari.selected {
+#btn-hikari.selected, .attr-hikari {
   color: white;
   background-color: silver;
 }
@@ -122,7 +122,7 @@ select {
   border-color: purple;
 }
 
-#btn-yami.selected {
+#btn-yami.selected, .attr-yami {
   color: white;
   background-color: purple;
 }
@@ -132,7 +132,7 @@ select {
   border-color: deeppink;
 }
 
-#btn-oto.selected {
+#btn-oto.selected, .attr-oto {
   color: white;
   background-color: deeppink;
 }
@@ -153,11 +153,15 @@ select {
 .detail-title {
   display: inline-block;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .detail-attr {
   display: inline-block;
   margin-left: 8px;
+  padding: 0 4px;
+  border-radius: 12%;
+  font-weight: 600;
 }
 
 .detail-item {

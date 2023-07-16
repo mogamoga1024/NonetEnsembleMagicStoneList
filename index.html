@@ -59,7 +59,7 @@
     <br>
     <div class="detail" v-for="maseki in masekiList">
       <div class="detail-title">{{maseki.name}}</div>
-      <div class="detail-attr" v-for="attr in maseki.attrList">{{attr}}</div><br>
+      <div :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div><br>
       <div v-for="enchant in maseki.enchantList">
         <div class="detail-item">{{enchant.name}}</div><div class="detail-desc">{{enchant.effect}}</div>
       </div>
