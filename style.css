@@ -8,6 +8,10 @@ select {
   font-size: 16px;
 }
 
+.search-cond {
+  margin-top: 4px;
+}
+
 .search-item {
   display: inline-block;
   width: 80px;

@@ -11,45 +11,52 @@
 <body>
   <div id="app">
     <h1>NonetEnsemble ～魔法仕掛けの迷宮～：魔石一覧</h1>
+    <hr>
     <div>
-      <label class="search-item">属性</label><!--
-      --><div class="attr-button">ALL</div>
-      <div class="attr-button">火</div>
-      <div class="attr-button">水</div>
-      <div class="attr-button">氷</div>
-      <div class="attr-button">風</div>
-      <div class="attr-button">雷</div>
-      <div class="attr-button">地</div>
-      <div class="attr-button">光</div>
-      <div class="attr-button">闇</div>
-      <div class="attr-button">音</div>
-      <br>
-      <label class="search-item" for="name">名称</label><!--
-      --><select name="name" v-model="selectedName" @change="onChangeName">
-        <option v-for="maseki in nameList" :value="maseki.name">{{maseki.display}}</option>
-      </select>
-      <br>
-      <label class="search-item" for="effect-group">効果分類</label><!--
-      --><select name="effect-group">
-        <option value="all">ALL</option>
-        <option value="単属性">単属性</option>
-        <option value="複属性">複属性</option>
-        <option value="状態異常">状態異常</option>
-        <option value="バフ">バフ</option>
-        <option value="その他">その他</option>
-      </select>
-      <br>
-      <label class="search-item" for="effect">効果詳細</label><!--
-      --><select name="effect" v-model="selectedEffect" @change="onChangeEffect">
-        <option v-for="maseki in effectList" :value="maseki.name">{{maseki.display}}</option>
-      </select>
-      <br>
-      <label class="search-item" for="sort">並び順</label><!--
-      --><select name="sort">
-        <option value="default">デフォルト</option>
-        <option value="power">威力</option>
-        <option value="range">範囲</option>
-      </select>
+      <div class="search-cond">
+        <label class="search-item">属性</label><!--
+        --><div class="attr-button">ALL</div>
+        <div class="attr-button">火</div>
+        <div class="attr-button">水</div>
+        <div class="attr-button">氷</div>
+        <div class="attr-button">風</div>
+        <div class="attr-button">雷</div>
+        <div class="attr-button">地</div>
+        <div class="attr-button">光</div>
+        <div class="attr-button">闇</div>
+        <div class="attr-button">音</div>
+      </div>
+      <div class="search-cond">
+        <label class="search-item" for="name">名称</label><!--
+        --><select name="name" v-model="selectedName" @change="onChangeName">
+          <option v-for="maseki in nameList" :value="maseki.name">{{maseki.display}}</option>
+        </select>
+      </div>
+      <div class="search-cond">
+        <label class="search-item" for="effect-group">効果分類</label><!--
+        --><select name="effect-group">
+          <option value="all">ALL</option>
+          <option value="単属性">単属性</option>
+          <option value="複属性">複属性</option>
+          <option value="状態異常">状態異常</option>
+          <option value="バフ">バフ</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div class="search-cond">
+        <label class="search-item" for="effect">効果詳細</label><!--
+        --><select name="effect" v-model="selectedEffect" @change="onChangeEffect">
+          <option v-for="maseki in effectList" :value="maseki.name">{{maseki.display}}</option>
+        </select>
+      </div>
+      <div class="search-cond">
+        <label class="search-item" for="sort">並び順</label><!--
+        --><select name="sort">
+          <option value="default">デフォルト</option>
+          <option value="power">威力</option>
+          <option value="range">範囲</option>
+        </select>
+      </div>
     </div>
     <hr>
     ※ 魔法範囲の@はプレイヤーの位置。赤色があるものは赤色を中心に発動位置を自由に決めることができる。
