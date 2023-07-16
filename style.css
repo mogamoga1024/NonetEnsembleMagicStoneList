@@ -40,7 +40,7 @@ select {
 
 .detail-item {
   display: inline-block;
-  width: 80px;
+  width: 100px;
   margin-right: 10px;
   text-align: right;
   vertical-align: top;
@@ -48,7 +48,7 @@ select {
 
 .detail-desc {
   display: inline-block;
-  width: calc(100% - 80px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
+  width: calc(100% - 100px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
 }
 
 .detail-range {
