@@ -60,17 +60,25 @@ const App = {
         this.effectList = [{name: "all", display: "ALL"}].concat(tmpEffectList);
     },
     methods: {
-        onChangeAttr(e) {
-            const attr = e.target.value;
-            if (attr === "all") {
-                this.masekiList = this.originalMasekiList;
+        onClickAttr(e, name) {
+            if (Array.prototype.includes.bind(e.target.classList)("selected")) {
+                e.target.classList.remove("selected")
             }
             else {
-                this.masekiList = this.originalMasekiList.filter(e => e.attrList.includes(attr));
+                e.target.classList.add("selected");
             }
-            this.selectedName = "all";
-            this.selectedEffect = "all";
         },
+        // onChangeAttr(e) {
+        //     const attr = e.target.value;
+        //     if (attr === "all") {
+        //         this.masekiList = this.originalMasekiList;
+        //     }
+        //     else {
+        //         this.masekiList = this.originalMasekiList.filter(e => e.attrList.includes(attr));
+        //     }
+        //     this.selectedName = "all";
+        //     this.selectedEffect = "all";
+        // },
         onChangeName(e) {
             this.findMasekiByName(e);
             this.selectedAttr = "all";

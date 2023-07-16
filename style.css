@@ -46,7 +46,95 @@ select {
   background-color: black;
 }
 
-/* todo */
+#btn-hi {
+  color: black;
+  border-color: black;
+}
+
+#btn-hi.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-mizu {
+  color: black;
+  border-color: black;
+}
+
+#btn-mizu.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-koori {
+  color: black;
+  border-color: black;
+}
+
+#btn-koori.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-kaze {
+  color: black;
+  border-color: black;
+}
+
+#btn-kaze.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-kaminari {
+  color: black;
+  border-color: black;
+}
+
+#btn-kaminari.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-ti {
+  color: black;
+  border-color: black;
+}
+
+#btn-ti.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-hikari {
+  color: black;
+  border-color: black;
+}
+
+#btn-hikari.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-yami {
+  color: black;
+  border-color: black;
+}
+
+#btn-yami.selected {
+  color: white;
+  background-color: black;
+}
+
+#btn-oto {
+  color: black;
+  border-color: black;
+}
+
+#btn-oto.selected {
+  color: white;
+  background-color: black;
+}
 
 .detail {
   display: inline-block;
