@@ -4,7 +4,7 @@ const App = {
         return {
             HIT: HIT, HIT_BASE: HIT_BASE, HIT_ENDLESS: HIT_ENDLESS,
             originalMasekiList: [],
-            attrCondMasekiList: [],
+            tmpMasekiList: [],
             masekiList: [],
             nameList: [],
             effectList: [],
@@ -40,7 +40,7 @@ const App = {
             return 0;
         });
         this.originalMasekiList = [...masekiList];
-        this.masekiList = this.attrCondMasekiList = this.originalMasekiList;
+        this.masekiList = this.tmpMasekiList = this.originalMasekiList;
 
         this.nameList = this.createNameList();
         this.effectList = this.createEffectList();
@@ -87,7 +87,7 @@ const App = {
                 }
             }
 
-            this.attrCondMasekiList = this.masekiList;
+            this.tmpMasekiList = this.masekiList;
             
             this.nameList = this.createNameList();
             this.effectList = this.createEffectList();
@@ -144,10 +144,10 @@ const App = {
         findMasekiByName(e) {
             const name = e.target.value;
             if (name === "all") {
-                this.masekiList = this.attrCondMasekiList;
+                this.masekiList = this.tmpMasekiList;
             }
             else {
-                this.masekiList = this.attrCondMasekiList.filter(e => e.name === name);
+                this.masekiList = this.tmpMasekiList.filter(e => e.name === name);
             }
         },
     }
