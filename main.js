@@ -7,6 +7,7 @@ const App = {
             masekiList: [],
             nameList: [],
             effectList: [],
+            attrKeyList: ["hi", "mizu", "koori", "kaze", "kaminari", "ti", "hikari", "yami", "oto"],
             isSelectedAttr: {
                 all: true,
                 hi: false, mizu: false, koori: false,
@@ -66,12 +67,21 @@ const App = {
     },
     methods: {
         onClickAttr(name) {
-            if (name === "all" && !this.isSelectedAttr[name]) {
+            if (name === "all") {
+                if (this.isSelectedAttr["all"]) {
+                    return;
+                }
                 this.resetIsSelectedAttr();
             }
             else {
-                this.isSelectedAttr["all"] = false;
                 this.isSelectedAttr[name] = !this.isSelectedAttr[name];
+
+                if (this.attrKeyList.every(key => !this.isSelectedAttr[key])) {
+                    this.isSelectedAttr["all"] = true;
+                }
+                else {
+                    this.isSelectedAttr["all"] = false;
+                }
             }
 
             // todo
@@ -99,15 +109,9 @@ const App = {
         },
         resetIsSelectedAttr() {
             this.isSelectedAttr["all"] = true;
-            this.isSelectedAttr["hi"] = false;
-            this.isSelectedAttr["mizu"] = false;
-            this.isSelectedAttr["koori"] = false;
-            this.isSelectedAttr["kaze"] = false;
-            this.isSelectedAttr["kaminari"] = false;
-            this.isSelectedAttr["ti"] = false;
-            this.isSelectedAttr["hikari"] = false;
-            this.isSelectedAttr["yami"] = false;
-            this.isSelectedAttr["oto"] = false;
+            this.attrKeyList.forEach(key => {
+                this.isSelectedAttr[key] = false; 
+            });
         },
         findMasekiByName(e) {
             const name = e.target.value;
