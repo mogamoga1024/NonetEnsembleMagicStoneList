@@ -97,7 +97,26 @@ const App = {
             this.selectedEffect = "all";
         },
         onChangeEffectGroup(e) {
-            const effectGroup = e.target.value;
+            switch (e.target.value) {
+                case "all":
+                    
+                    break;
+                case "single":
+                
+                    break;
+                case "multi":
+                
+                    break;
+                case "abnormal":
+                
+                    break;
+                case "buff":
+                
+                    break;
+                case "etc":
+                
+                    break;
+            }
             // todo
         },
         onChangeEffect(e) {
