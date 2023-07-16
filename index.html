@@ -58,8 +58,10 @@
     ※ 魔法範囲の@はプレイヤーの位置。赤色があるものは赤色を中心に発動位置を自由に決めることができる。
     <br>
     <div class="detail" v-for="maseki in masekiList">
-      <div class="detail-title">{{maseki.name}}</div>
-      <div :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div><br>
+      <div class="detail-title-wrapper">
+        <div class="detail-title">{{maseki.name}}</div>
+        <div :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div>
+      </div>
       <div v-for="enchant in maseki.enchantList">
         <div class="detail-item">{{enchant.name}}</div><div class="detail-desc">{{enchant.effect}}</div>
       </div>

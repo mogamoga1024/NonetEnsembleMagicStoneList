@@ -150,15 +150,21 @@ select {
   vertical-align: top;
 }
 
+.detail-title-wrapper {
+  display: flex;
+}
+
 .detail-title {
   display: inline-block;
+  margin-right: 8px;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .detail-attr {
   display: inline-block;
-  margin-left: 8px;
+  height: 26px;
+  margin-left: 2px;
   padding: 0 4px;
   border-radius: 12%;
   font-weight: 600;
