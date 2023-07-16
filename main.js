@@ -178,6 +178,13 @@ const App = {
             }
             this.nameList = this.createNameList();
             this.effectList = this.createEffectList();
+        },
+        findAttrKeyByAttrName(name) {
+            for (const attr of this.attrList) {
+                if (attr.name === name) {
+                    return attr.key;
+                }
+            }
         }
     }
 };
