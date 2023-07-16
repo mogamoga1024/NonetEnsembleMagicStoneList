@@ -7,7 +7,12 @@ const App = {
             masekiList: [],
             nameList: [],
             effectList: [],
-            selectedAttr: "all",
+            isSelectedAttr: {
+                all: true,
+                hi: false, mizu: false, koori: false,
+                kaze: false, kaminari: false, ti: false, 
+                hikari: false, yami: false, oto: false
+            },
             selectedName: "all",
             selectedEffect: "all",
         }
@@ -60,13 +65,16 @@ const App = {
         this.effectList = [{name: "all", display: "ALL"}].concat(tmpEffectList);
     },
     methods: {
-        onClickAttr(e, name) {
-            if (Array.prototype.includes.bind(e.target.classList)("selected")) {
-                e.target.classList.remove("selected")
+        onClickAttr(name) {
+            if (name === "all" && !this.isSelectedAttr[name]) {
+                this.resetIsSelectedAttr();
             }
             else {
-                e.target.classList.add("selected");
+                this.isSelectedAttr["all"] = false;
+                this.isSelectedAttr[name] = !this.isSelectedAttr[name];
             }
+
+            // todo
         },
         // onChangeAttr(e) {
         //     const attr = e.target.value;
@@ -81,13 +89,25 @@ const App = {
         // },
         onChangeName(e) {
             this.findMasekiByName(e);
-            this.selectedAttr = "all";
+            this.resetIsSelectedAttr();
             this.selectedEffect = "all";
         },
         onChangeEffect(e) {
             this.findMasekiByName(e);
-            this.selectedAttr = "all";
+            this.resetIsSelectedAttr();
             this.selectedName = "all";
+        },
+        resetIsSelectedAttr() {
+            this.isSelectedAttr["all"] = true;
+            this.isSelectedAttr["hi"] = false;
+            this.isSelectedAttr["mizu"] = false;
+            this.isSelectedAttr["koori"] = false;
+            this.isSelectedAttr["kaze"] = false;
+            this.isSelectedAttr["kaminari"] = false;
+            this.isSelectedAttr["ti"] = false;
+            this.isSelectedAttr["hikari"] = false;
+            this.isSelectedAttr["yami"] = false;
+            this.isSelectedAttr["oto"] = false;
         },
         findMasekiByName(e) {
             const name = e.target.value;
