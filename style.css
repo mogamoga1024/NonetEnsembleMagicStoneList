@@ -20,12 +20,12 @@ select {
   vertical-align: top;
 }
 
-#attr-button-wrapper {
+#btn-attr-wrapper {
   display: inline-block;
   width: calc(100% - 80px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
 }
 
-.attr-button {
+.btn-attr {
   display: inline-block;
   margin-top: 2px;
   margin-right: 2px;
@@ -35,6 +35,18 @@ select {
   cursor: pointer;
   user-select: none;
 }
+
+.btn-all {
+  color: black;
+  border-color: black;
+}
+
+.btn-all.selected {
+  color: white;
+  background-color: black;
+}
+
+/* todo */
 
 .detail {
   display: inline-block;
