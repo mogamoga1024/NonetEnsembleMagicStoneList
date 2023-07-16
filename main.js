@@ -41,39 +41,8 @@ const App = {
         this.originalMasekiList = [...masekiList];
         this.masekiList = this.originalMasekiList;
 
-        const tmpNameList = this.masekiList.map(e => {
-            return {
-                name: e.name,
-                display: e.name
-            }
-        }).sort((a, b) => {
-            if (a.name < b.name) {
-                return -1;
-            }
-            else if (a.name > b.name) {
-                return 1;
-            }
-            return 0;
-        });
-
-        const tmpEffectList = this.masekiList.map(e => {
-            return {
-                name: e.name, 
-                display: (function() {
-                    let enchant = "";
-                    if (e.enchantList[0].name === e.enchantList[1].name) {
-                        enchant = e.enchantList[0].name;
-                    }
-                    else {
-                        enchant = e.enchantList.map(f => f.name).join("/");
-                    }
-                    return "[" + e.attrList.join("/") + "] " + enchant;
-                })(),
-            }
-        });
-
-        this.nameList = [{name: "all", display: "ALL"}].concat(tmpNameList);
-        this.effectList = [{name: "all", display: "ALL"}].concat(tmpEffectList);
+        this.nameList = this.createNameList();
+        this.effectList = this.createEffectList();
     },
     methods: {
         onClickAttr(key) {
@@ -125,6 +94,41 @@ const App = {
         onChangeEffect(e) {
             this.findMasekiByName(e);
             this.selectedName = "all";
+        },
+        createNameList() {
+            const tmpNameList = this.masekiList.map(e => {
+                return {
+                    name: e.name,
+                    display: e.name
+                }
+            }).sort((a, b) => {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                else if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+            });
+            return [{name: "all", display: "ALL"}].concat(tmpNameList);
+        },
+        createEffectList() {
+            const tmpEffectList = this.masekiList.map(e => {
+                return {
+                    name: e.name, 
+                    display: (function() {
+                        let enchant = "";
+                        if (e.enchantList[0].name === e.enchantList[1].name) {
+                            enchant = e.enchantList[0].name;
+                        }
+                        else {
+                            enchant = e.enchantList.map(f => f.name).join("/");
+                        }
+                        return "[" + e.attrList.join("/") + "] " + enchant;
+                    })(),
+                }
+            });
+            return [{name: "all", display: "ALL"}].concat(tmpEffectList);
         },
         resetIsSelectedAttr() {
             this.isSelectedAttr["all"] = true;
