@@ -93,11 +93,15 @@ const App = {
             this.effectList = this.createEffectList();
         },
         onChangeName(e) {
-            this.findMasekiByName(e);
+            this.findMasekiByName(e.target.value);
             this.selectedEffect = "all";
         },
+        onChangeEffectGroup(e) {
+            const effectGroup = e.target.value;
+            // todo
+        },
         onChangeEffect(e) {
-            this.findMasekiByName(e);
+            this.findMasekiByName(e.target.value);
             this.selectedName = "all";
         },
         createNameList() {
@@ -141,8 +145,7 @@ const App = {
                 this.isSelectedAttr[attr.key] = false; 
             });
         },
-        findMasekiByName(e) {
-            const name = e.target.value;
+        findMasekiByName(name) {
             if (name === "all") {
                 this.masekiList = this.tmpMasekiList;
             }
