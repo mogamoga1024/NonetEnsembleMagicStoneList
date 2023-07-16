@@ -84,8 +84,10 @@ const App = {
                         return maseki.attrList.every(attr => selectedAttrList.includes(attr))
                     });
                 }
-                
             }
+
+            this.nameList = this.createNameList();
+            this.effectList = this.createEffectList();
         },
         onChangeName(e) {
             this.findMasekiByName(e);
