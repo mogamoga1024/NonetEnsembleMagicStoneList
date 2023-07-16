@@ -27,6 +27,10 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         maseki.isEtc = true;
     }
 
+    if (maseki.attrList.length > 1 && !maseki.isAbnormal && !maseki.isBuff && !maseki.isEtc) {
+        console.log(`効果群を定義してください: ${maseki.name}`);
+    }
+
     masekiList.push(maseki);
 }
 
