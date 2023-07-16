@@ -36,12 +36,12 @@ select {
   user-select: none;
 }
 
-.btn-all {
+#btn-all {
   color: black;
   border-color: black;
 }
 
-.btn-all.selected {
+#btn-all.selected {
   color: white;
   background-color: black;
 }
