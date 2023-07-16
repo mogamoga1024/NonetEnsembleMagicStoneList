@@ -30,7 +30,7 @@
       </div>
       <div class="search-cond">
         <label class="search-item" for="effect-group">効果分類</label><!--
-        --><select name="effect-group" @change="onChangeEffectGroup">
+        --><select name="effect-group" v-model="selectedEffectGroup" @change="onChangeEffectGroup">
           <option value="all">ALL</option>
           <option value="single">単属性</option>
           <option value="multi">複属性</option>

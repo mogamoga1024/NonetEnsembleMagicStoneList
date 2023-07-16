@@ -26,6 +26,7 @@ const App = {
                 hikari: false, yami: false, oto: false
             },
             selectedName: "all",
+            selectedEffectGroup: "all",
             selectedEffect: "all",
         }
     },
