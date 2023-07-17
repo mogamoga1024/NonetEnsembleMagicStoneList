@@ -201,6 +201,12 @@ select {
   width: calc(100% - 100px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
 }
 
+.detail-desc-power {
+  display: inline-block;
+  width: calc(100% - 100px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
+  line-height: 25px;
+}
+
 .detail-range {
   display: inline-flex;
   width: calc(24px * 5 + 1px * 6 + 10px); /* tdの幅 * 5 + tdのborderの幅 * 6 + おまけ */
