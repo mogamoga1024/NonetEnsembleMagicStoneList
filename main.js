@@ -3,7 +3,6 @@ const App = {
     data() {
         return {
             HIT: HIT, HIT_BASE: HIT_BASE, HIT_ENDLESS: HIT_ENDLESS,
-            originalMasekiList: [],
             attrCondMasekiList: [],
             masekiList: [],
             nameList: [],
@@ -41,8 +40,7 @@ const App = {
             }
             return 0;
         });
-        this.originalMasekiList = [...masekiList];
-        this.masekiList = this.attrCondMasekiList = this.originalMasekiList;
+        this.masekiList = this.attrCondMasekiList = [...masekiList];
 
         this.nameList = this.createNameList();
         this.effectList = this.createEffectList();
@@ -68,7 +66,7 @@ const App = {
             }
 
             if (this.isSelectedAttr["all"]) {
-                this.masekiList = this.originalMasekiList;
+                this.masekiList = [...masekiList];
             }
             else {
                 let selectedAttrList = [];
@@ -79,12 +77,12 @@ const App = {
                 });
 
                 if (selectedAttrList.length === 1) {
-                    this.masekiList = this.originalMasekiList.filter(maseki => {
+                    this.masekiList = masekiList.filter(maseki => {
                         return maseki.attrList.some(attr => selectedAttrList.includes(attr))
                     });
                 }
                 else {
-                    this.masekiList = this.originalMasekiList.filter(maseki => {
+                    this.masekiList = masekiList.filter(maseki => {
                         return maseki.attrList.every(attr => selectedAttrList.includes(attr))
                     });
                 }

@@ -27,6 +27,7 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
     }
 
     const maseki = {
+        id: 0, // main.jsで値をセットする
         name: name,
         attrList: attrList,
         enchantList: enchantList.map(e => {return {name: e[0], effect: e[1]}}),
