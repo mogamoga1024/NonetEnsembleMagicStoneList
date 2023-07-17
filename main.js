@@ -28,6 +28,7 @@ const App = {
             selectedName: "all",
             selectedEffectGroup: "all",
             selectedEffect: "all",
+            selectedSort: "default"
         }
     },
     created() {
@@ -105,6 +106,19 @@ const App = {
         onChangeEffect(e) {
             this.findMasekiByName(e.target.value);
             this.selectedName = "all";
+        },
+        onChangeSort(e) {
+            switch (e.target.value) {
+                case "default":
+                    // todo
+                    break;
+                case "power":
+                    // todo
+                    break;
+                case "range":
+                    // todo
+                    break;
+            }
         },
         createNameList() {
             const tmpNameList = this.masekiList.map(e => {

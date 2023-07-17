@@ -47,7 +47,7 @@
       </div>
       <div class="search-cond">
         <label class="search-item" for="sort">並び順</label><!--
-        --><select name="sort">
+        --><select name="sort" v-model="selectedSort" @change="onChangeSort">
           <option value="default">デフォルト</option>
           <option value="power">威力</option>
           <option value="range">範囲</option>
