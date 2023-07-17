@@ -99,6 +99,7 @@ const App = {
             this.sortMasekiList(this.selectedSort);
             this.nameList = this.createNameList();
             this.effectList = this.createEffectList();
+            this.selectedName = this.selectedEffect = "all";
         },
         onChangeName(e) {
             this.findMasekiByName(e.target.value);
