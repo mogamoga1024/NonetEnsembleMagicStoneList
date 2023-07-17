@@ -40,6 +40,10 @@ const App = {
             }
             return 0;
         });
+        for (let i = 0; i < masekiList.length; i++) {
+            masekiList[i].id = i + 1;
+        }
+
         this.masekiList = this.attrCondMasekiList = [...masekiList];
 
         this.nameList = this.createNameList();
@@ -108,7 +112,7 @@ const App = {
         onChangeSort(e) {
             switch (e.target.value) {
                 case "default":
-                    // todo
+                    // this.masekiList.sort
                     break;
                 case "power":
                     // todo
@@ -119,6 +123,7 @@ const App = {
             }
         },
         createNameList() {
+            // todo sort考慮
             const tmpNameList = this.masekiList.map(e => {
                 return {
                     name: e.name,
@@ -136,6 +141,7 @@ const App = {
             return [{name: "all", display: "ALL"}].concat(tmpNameList);
         },
         createEffectList() {
+            // todo sort考慮
             const tmpEffectList = this.masekiList.map(e => {
                 return {
                     name: e.name, 
