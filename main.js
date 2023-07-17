@@ -112,18 +112,17 @@ const App = {
         onChangeSort(e) {
             switch (e.target.value) {
                 case "default":
-                    // this.masekiList.sort
+                    this.masekiList.sort((a, b) => a.id - b.id);
                     break;
                 case "power":
-                    // todo
+                    this.masekiList.sort((a, b) => b.power - a.power);
                     break;
                 case "range":
-                    // todo
+                    this.masekiList.sort((a, b) => b.rangeSize - a.rangeSize);
                     break;
             }
         },
         createNameList() {
-            // todo sort考慮
             const tmpNameList = this.masekiList.map(e => {
                 return {
                     name: e.name,
@@ -141,8 +140,8 @@ const App = {
             return [{name: "all", display: "ALL"}].concat(tmpNameList);
         },
         createEffectList() {
-            // todo sort考慮
-            const tmpEffectList = this.masekiList.map(e => {
+            const defaultSortMasekiList = [...this.masekiList].sort((a, b) => a.id - b.id);
+            const tmpEffectList = defaultSortMasekiList.map(e => {
                 return {
                     name: e.name, 
                     display: (function() {
