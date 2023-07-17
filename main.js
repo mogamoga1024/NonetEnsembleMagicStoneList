@@ -109,6 +109,8 @@ const App = {
             this.findMasekiListByEffectGroup(e.target.value);
             this.nameList = this.createNameList();
             this.effectList = this.createEffectList();
+            this.selectedName = "all";
+            this.selectedEffect = "all";
         },
         onChangeEffect(e) {
             this.findMasekiByName(e.target.value);
