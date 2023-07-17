@@ -93,8 +93,8 @@ const App = {
             }
 
             this.attrCondMasekiList = this.masekiList;
-            
             this.findMasekiListByEffectGroup(this.selectedEffectGroup);
+            this.sortMasekiList(this.selectedSort);
             this.nameList = this.createNameList();
             this.effectList = this.createEffectList();
         },
@@ -104,23 +104,15 @@ const App = {
         },
         onChangeEffectGroup(e) {
             this.findMasekiListByEffectGroup(e.target.value);
+            this.nameList = this.createNameList();
+            this.effectList = this.createEffectList();
         },
         onChangeEffect(e) {
             this.findMasekiByName(e.target.value);
             this.selectedName = "all";
         },
         onChangeSort(e) {
-            switch (e.target.value) {
-                case "default":
-                    this.masekiList.sort((a, b) => a.id - b.id);
-                    break;
-                case "power":
-                    this.masekiList.sort((a, b) => b.power - a.power);
-                    break;
-                case "range":
-                    this.masekiList.sort((a, b) => b.rangeSize - a.rangeSize);
-                    break;
-            }
+            this.sortMasekiList(e.target.value);
         },
         createNameList() {
             const tmpNameList = this.masekiList.map(e => {
@@ -193,14 +185,25 @@ const App = {
                     this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.isEtc);
                     break;
             }
-            this.nameList = this.createNameList();
-            this.effectList = this.createEffectList();
         },
         findAttrKeyByAttrName(name) {
             for (const attr of this.attrList) {
                 if (attr.name === name) {
                     return attr.key;
                 }
+            }
+        },
+        sortMasekiList(sort) {
+            switch (sort) {
+                case "default":
+                    this.masekiList.sort((a, b) => a.id - b.id);
+                    break;
+                case "power":
+                    this.masekiList.sort((a, b) => b.power - a.power);
+                    break;
+                case "range":
+                    this.masekiList.sort((a, b) => b.rangeSize - a.rangeSize);
+                    break;
             }
         }
     }
