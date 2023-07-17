@@ -32,10 +32,12 @@ const App = {
     },
     created() {
         masekiList.sort((a, b) => {
-            if (a.isBuff && !b.isBuff) {
+            const isSirenA = /試練/.test(a.enchantList[0].name);
+            const isSirenB = /試練/.test(b.enchantList[0].name);
+            if (isSirenA && !isSirenB) {
                 return 1;
             }
-            else if (!a.isBuff && b.isBuff) {
+            else if (!isSirenA && isSirenB) {
                 return -1;
             }
             return 0;

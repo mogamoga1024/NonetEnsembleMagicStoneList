@@ -412,8 +412,8 @@ addMaseki(
     "フロッギートーン",
     ["水", "音"],
     [
-        ["hoge", "hogehoge"],
-        ["hoge", "hogehoge"],
+        ["水の試練", "hogehoge"],
+        ["水の加護", "hogehoge"],
     ],
     0,
     "hogehoge",
@@ -517,8 +517,8 @@ addMaseki(
     "ガードトーン",
     ["氷", "音"],
     [
-        ["hoge", "hogehoge"],
-        ["hoge", "hogehoge"],
+        ["氷の試練", "hogehoge"],
+        ["氷の加護", "hogehoge"],
     ],
     0,
     "hogehoge",
@@ -709,8 +709,8 @@ addMaseki(
     "ソナートーン",
     ["地", "音"],
     [
-        ["hoge", "hogehoge"],
-        ["hoge", "hogehoge"],
+        ["地の試練", "hogehoge"],
+        ["地の加護", "hogehoge"],
     ],
     0,
     "hogehoge",
