@@ -5,7 +5,7 @@ const HIT_ENDLESS = 3;
 
 const masekiList = [];
 
-function addMaseki(name, attrList, enchantList, power, effect, range) {
+function addMaseki(name, attrList, enchantList, power, effect, range, note = "") {
     if (enchantList.length === 1) {
         enchantList.push(enchantList[0]);
     }
@@ -37,6 +37,7 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         power: power,
         effect: effect,
         range: range,
+        note: note,
         rangeSize: rangeSize,
         isAbnormal: attrList.length > 1 && /耐性/.test(enchantList[1][0]),
         isBuff: /従者|試練/.test(enchantList[0][0]),
@@ -257,7 +258,7 @@ addMaseki(
     "メテオ",
     ["火", "地"],
     [
-        ["壁破壊", "壁を破壊できる（数回で武器が壊れる）"],
+        ["壁破壊", "壁を破壊できる"],
         ["防御", "防御力を得る"],
     ],
     200,
@@ -268,7 +269,8 @@ addMaseki(
         [0, 1, 2, 1, 0],
         [0, 1, 1, 1, 0],
         [0, 0, 0, 0, 0]
-    ]
+    ],
+    "壁を破壊した際に武器が壊れることがある"
 );
 
 addMaseki(
@@ -286,7 +288,8 @@ addMaseki(
         [1, 1, 2, 1, 1],
         [0, 0, 1, 0, 0],
         [0, 0, 1, 0, 0]
-    ]
+    ],
+    "見切れているが魔法は上下左右に4マス届く"
 );
 
 addMaseki(
