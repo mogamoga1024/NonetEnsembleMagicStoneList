@@ -211,6 +211,7 @@ select {
   display: inline-flex;
   width: calc(24px * 5 + 1px * 6 + 10px); /* tdの幅 * 5 + tdのborderの幅 * 6 + おまけ */
   height: calc(24px * 5 + 1px * 6 + 10px);
+  padding-top: 6px;
   justify-content: center;
   align-items: center;
 }
