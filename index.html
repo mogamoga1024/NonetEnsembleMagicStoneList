@@ -23,7 +23,7 @@
           </template>
         </div>
       </div>
-      <div class="search-cond">
+      <div class="search-cond" style="margin-top: 6px;">
         <label class="search-item" for="name">名称</label><!--
         --><select name="name" v-model="selectedName" @change="onChangeName">
           <option v-for="maseki in nameList" :value="maseki.name">{{maseki.display}}</option>

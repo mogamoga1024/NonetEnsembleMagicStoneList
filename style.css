@@ -29,7 +29,7 @@ select {
 .btn-attr {
   display: inline-block;
   height: 25px;
-  /* line-height: 25px; */
+  line-height: 25px;
   margin-top: 2px;
   margin-right: 2px;
   padding: 0 4px;
@@ -179,7 +179,7 @@ select {
 .detail-attr {
   display: inline-block;
   height: 25px;
-  /* line-height: 25px; */
+  line-height: 25px;
   margin-left: 2px;
   padding: 0 4px;
   border-radius: 12%;
