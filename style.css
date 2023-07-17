@@ -10,7 +10,9 @@ select {
 }
 
 .search-cond {
+  display: flex;
   margin-top: 4px;
+  align-items: center;
 }
 
 .search-item {
