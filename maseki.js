@@ -15,8 +15,11 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         for (const row of range) {
             for (const h of row) {
                 switch (h) {
-                    case HIT, HIT_BASE:
+                    case HIT:
                         rangeSize += 1;
+                        break;
+                    case HIT_BASE:
+                        rangeSize += 1.5;
                         break;
                     case HIT_ENDLESS:
                         rangeSize += 10;
