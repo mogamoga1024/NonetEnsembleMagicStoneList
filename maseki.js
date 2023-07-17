@@ -43,6 +43,11 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         isEtc: false
     };
 
+    // 範囲が特殊
+    if (maseki.name === "ホーリーレイ") {
+        maseki.rangeSize += 8;
+    }
+
     // 例外的な魔石は個別でフラグを変える
     if (maseki.name === "メテオ") {
         maseki.isEtc = true;
@@ -276,11 +281,11 @@ addMaseki(
     42,
     "hogehoge",
     [
-        [0, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0],
-        [0, 1, 1, 1, 0],
-        [0, 1, 1, 1, 0],
-        [0, 0, 0, 0, 0]
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [1, 1, 2, 1, 1],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0]
     ]
 );
 
