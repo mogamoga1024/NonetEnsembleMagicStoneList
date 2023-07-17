@@ -39,24 +39,8 @@ function addMaseki(name, attrList, enchantList, power, effect, range, note = "")
         range: range,
         note: note,
         rangeSize: rangeSize,
-        isAbnormal: attrList.length > 1 && /耐性/.test(enchantList[1][0]),
-        isBuff: /従者|試練/.test(enchantList[0][0]),
-        isEtc: false
+        isAbnormal: attrList.length > 1 && /耐性/.test(enchantList[1][0])
     };
-
-    // 範囲が特殊
-    if (maseki.name === "ホーリーレイ") {
-        maseki.rangeSize += 8;
-    }
-
-    // 例外的な魔石は個別でフラグを変える
-    if (maseki.name === "メテオ") {
-        maseki.isEtc = true;
-    }
-
-    if (maseki.attrList.length > 1 && !maseki.isAbnormal && !maseki.isBuff && !maseki.isEtc) {
-        console.log(`効果群を定義してください: ${maseki.name}`);
-    }
 
     masekiList.push(maseki);
 }
