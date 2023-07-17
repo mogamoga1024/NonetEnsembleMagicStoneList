@@ -10,6 +10,22 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         enchantList.push(enchantList[0]);
     }
 
+    let rangeSize = 0;
+    if (power > 0) {
+        for (const row of range) {
+            for (const h of row) {
+                switch (h) {
+                    case HIT, HIT_BASE:
+                        rangeSize += 1;
+                        break;
+                    case HIT_ENDLESS:
+                        rangeSize += 10;
+                        break;
+                }
+            }
+        }
+    }
+
     const maseki = {
         name: name,
         attrList: attrList,
@@ -17,6 +33,7 @@ function addMaseki(name, attrList, enchantList, power, effect, range) {
         power: power,
         effect: effect,
         range: range,
+        rangeSize: rangeSize,
         isAbnormal: attrList.length > 1 && /耐性/.test(enchantList[1][0]),
         isBuff: /従者|試練/.test(enchantList[0][0]),
         isEtc: false
