@@ -182,7 +182,7 @@ const App = {
                     this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.isAbnormal);
                     break;
                 case "etc":
-                    this.masekiList = this.attrCondMasekiList.filter(maseki => !maseki.isAbnormal);
+                    this.masekiList = this.attrCondMasekiList.filter(maseki => maseki.attrList.length > 1 && !maseki.isAbnormal);
                     break;
             }
         },
