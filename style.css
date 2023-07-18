@@ -2,7 +2,7 @@
 #app {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 8px;
+  padding: 0 16px;
   font-size: 16px;
   font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
 }
@@ -19,7 +19,7 @@ select {
 
 .search-item {
   display: inline-block;
-  width: 80px;
+  width: 70px;
   margin-right: 10px;
   text-align: right;
   vertical-align: top;
@@ -27,7 +27,7 @@ select {
 
 #btn-attr-wrapper {
   display: inline-block;
-  width: calc(100% - 80px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
+  width: calc(100% - 70px - 10px); /* 親の幅 - 項目の幅 - 項目の右マージン */
 }
 
 .btn-attr {
