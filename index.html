@@ -8,6 +8,7 @@
   <title>NonetEnsemble ～魔法仕掛けの迷宮～：魔石一覧</title>
   <script src="https://unpkg.com/vue@next"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
   <div id="app">
@@ -58,32 +59,34 @@
     <div style="margin: 10px 0 0 30px;" v-if="masekiList.length === 0">
       魔石データがない！！
     </div>
-    <template v-else>
+    <template id="maseki-list" v-else>
       ※ 魔法範囲の@はプレイヤーの位置。赤色があるものは赤色を中心に発動位置を自由に決めることができる。<br>
-      <div class="detail" v-for="maseki in masekiList">
-        <div class="detail-title-wrapper">
-          <div class="detail-title">{{maseki.name}}</div>
-          <div :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div>
-        </div>
-        <div v-for="enchant in maseki.enchantList">
-          <div class="detail-item">{{enchant.name}}</div><div class="detail-desc">{{enchant.effect}}</div>
-        </div>
-        <div><div class="detail-item">魔法威力</div><div class="detail-desc-power">{{maseki.power}}%</div></div>
-        <div><div class="detail-item">魔法効果</div><div class="detail-desc">{{maseki.effect}}</div></div>
-        <div>
-          <div class="detail-item">魔法範囲</div>
-          <div class="detail-range">
-            <table>
-              <tr v-for="(rangeRow, row) in maseki.range">
-                <td v-for="(hit, col) in rangeRow" :class="{hit: hit === HIT || hit === HIT_ENDLESS, base: hit === HIT_BASE}">
-                  <template v-if="row === col && row === (rangeRow.length - 1) / 2">@</template>
-                  <template v-else-if="hit === HIT_ENDLESS">∞</template>
-                </td>
-              </tr>
-            </table>
+      <div id="maseki-list">
+        <div class="detail" v-for="maseki in masekiList">
+          <div class="detail-title-wrapper">
+            <div class="detail-title">{{maseki.name}}</div>
+            <div :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div>
           </div>
+          <div v-for="enchant in maseki.enchantList">
+            <div class="detail-item">{{enchant.name}}</div><div class="detail-desc">{{enchant.effect}}</div>
+          </div>
+          <div><div class="detail-item">魔法威力</div><div class="detail-desc-power">{{maseki.power}}%</div></div>
+          <div><div class="detail-item">魔法効果</div><div class="detail-desc">{{maseki.effect}}</div></div>
+          <div>
+            <div class="detail-item">魔法範囲</div>
+            <div class="detail-range">
+              <table>
+                <tr v-for="(rangeRow, row) in maseki.range">
+                  <td v-for="(hit, col) in rangeRow" :class="{hit: hit === HIT || hit === HIT_ENDLESS, base: hit === HIT_BASE}">
+                    <template v-if="row === col && row === (rangeRow.length - 1) / 2">@</template>
+                    <template v-else-if="hit === HIT_ENDLESS">∞</template>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div v-if="maseki.note !== ''" style="margin-top: 2px;"><div class="detail-item">補足</div><div class="detail-desc">{{maseki.note}}</div></div>
         </div>
-        <div v-if="maseki.note !== ''" style="margin-top: 2px;"><div class="detail-item">補足</div><div class="detail-desc">{{maseki.note}}</div></div>
       </div>
     </template>
   </div>

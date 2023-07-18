@@ -154,8 +154,12 @@ select {
   background-color: deeppink;
 }
 
+#maseki-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .detail {
-  display: inline-block;
   width: 290px;
   /* max-width: 290px; */
   min-height: 267px;

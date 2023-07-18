@@ -1,0 +1,11 @@
+
+@media screen and (max-width: 480px) {
+  #maseki-list {
+    justify-content: center;
+    background-color: red;
+  }
+
+  .detail {
+    margin-right: 0;
+  }
+}
