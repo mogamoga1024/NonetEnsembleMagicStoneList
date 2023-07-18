@@ -1,5 +1,7 @@
 
 #app {
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 8px;
   font-size: 16px;
   font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
