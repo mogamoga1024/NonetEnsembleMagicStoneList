@@ -201,7 +201,7 @@ const App = {
                     this.masekiList.sort((a, b) => a.id - b.id);
                     break;
                 case "power":
-                    this.masekiList.sort((a, b) => b.power - a.power);
+                    this.masekiList.sort((a, b) => b.powerList[0] - a.powerList[0]);
                     break;
                 case "range":
                     this.masekiList.sort((a, b) => b.rangeSize - a.rangeSize);
