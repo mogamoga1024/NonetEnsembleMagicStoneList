@@ -81,7 +81,7 @@
           <div v-for="enchant in maseki.enchantList">
             <div class="detail-item" v-cloak>{{enchant.name}}</div><div class="detail-desc" v-cloak>{{enchant.effect}}</div>
           </div>
-          <div><div class="detail-item">魔法威力</div><div class="detail-desc-power" v-cloak>{{maseki.powerList.map(p => p + "%").join("/")}}</div></div>
+          <div><div class="detail-item">魔法威力</div><div class="detail-desc-power" v-cloak>{{maseki.powerList.map(p => p + "%").join(" ")}}</div></div>
           <div><div class="detail-item">魔法効果</div><div class="detail-desc" v-cloak>{{maseki.effect}}</div></div>
           <div>
             <div class="detail-item">魔法範囲</div>
