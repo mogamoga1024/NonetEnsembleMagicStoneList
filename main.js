@@ -201,20 +201,42 @@ const App = {
                     this.masekiList.sort((a, b) => a.id - b.id);
                     break;
                 case "range":
-                    this.masekiList.sort((a, b) => b.rangeSize - a.rangeSize);
+                    this.masekiList.sort((a, b) => {
+                        if (a.rangeSize === b.rangeSize) {
+                            return a.id - b.id;
+                        }
+                        return b.rangeSize - a.rangeSize;
+                    });
                     break;
                 case "power-default": // 威力（初期値）
-                    this.masekiList.sort((a, b) => b.powerList[0] - a.powerList[0]);
+                    this.masekiList.sort((a, b) => {
+                        const powerA = a.powerList[0];
+                        const powerB = b.powerList[0];
+                        if (powerA === powerB) {
+                            return a.id - b.id;
+                        }
+                        return powerB - powerA;
+                    });
                     break;
                 case "power-level2": // 威力（中級）
                     this.masekiList.sort((a, b) => {
-                        let powerA = a.powerList.length === 3 ? a.powerList[1] : a.powerList[0];
-                        let powerB = b.powerList.length === 3 ? b.powerList[1] : b.powerList[0];
-                        return powerB - powerA;                        
+                        const powerA = a.powerList.length === 3 ? a.powerList[1] : a.powerList[0];
+                        const powerB = b.powerList.length === 3 ? b.powerList[1] : b.powerList[0];
+                        if (powerA === powerB) {
+                            return a.id - b.id;
+                        }
+                        return powerB - powerA;
                     });
                     break;
                 case "power-level3": // 威力（上級）
-                    this.masekiList.sort((a, b) => b.powerList[b.powerList.length - 1] - a.powerList[a.powerList.length - 1]);
+                    this.masekiList.sort((a, b) => {
+                        const powerA = a.powerList[a.powerList.length - 1];
+                        const powerB = b.powerList[b.powerList.length - 1];
+                        if (powerA === powerB) {
+                            return a.id - b.id;
+                        }
+                        return powerB - powerA;
+                    });
                     break;
             }
         }
