@@ -155,15 +155,14 @@ select {
 
 #maseki-list {
   display: flex;
+  margin: 10px 0 24px;
   flex-wrap: wrap;
+  gap: 10px 8px;
 }
 
 .detail {
   width: 290px;
-  /* max-width: 290px; */
   min-height: 267px;
-  margin-top: 10px;
-  margin-right: 8px;
   padding: 12px;
   border: 1px solid black;
   border-radius: 2%;
