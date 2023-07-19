@@ -3,6 +3,10 @@
   display: none;
 }
 
+body {
+  background-color: #fcfcfc;
+}
+
 #app {
   max-width: 1300px;
   margin: 0 auto;
