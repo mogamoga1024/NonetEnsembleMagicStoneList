@@ -14,8 +14,8 @@
 /* #appの幅以下の場合 */
 @media screen and (max-width: 1300px) {
   h1 {
-    /* #app + #appのパディング - github-cornerの幅 */
-    width: calc(100% + 32px - 80px);
+    /* #app + #appのパディング - github-cornerの幅 / 2 - 10px */
+    width: calc(100% + 32px - 80px / 2 - 10px);
   }
 }
 
