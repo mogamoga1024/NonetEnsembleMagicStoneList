@@ -1,5 +1,9 @@
 
 @media screen and (max-width: 480px) {
+  h1 {
+    width: auto;
+  }
+
   #maseki-list {
     justify-content: center;
   }

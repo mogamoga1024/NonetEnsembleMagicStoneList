@@ -7,6 +7,14 @@
   font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
 }
 
+/* #appの幅以下の場合 */
+@media screen and (max-width: 1300px) {
+  h1 {
+    /* #app + #appのパディング - github-cornerの幅 */
+    width: calc(100% + 32px - 80px);
+  }
+}
+
 select {
   font-size: 16px;
 }
