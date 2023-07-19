@@ -163,7 +163,7 @@ const App = {
         },
         findMasekiByName(name) {
             if (name === "all") {
-                this.masekiList = this.attrCondMasekiList;
+                this.findMasekiListByEffectGroup(this.selectedEffectGroup);
             }
             else {
                 this.masekiList = this.attrCondMasekiList.filter(e => e.name === name);
