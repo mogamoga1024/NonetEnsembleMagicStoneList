@@ -1,4 +1,8 @@
 
+[v-cloak] {
+  display: none;
+}
+
 #app {
   max-width: 1300px;
   margin: 0 auto;

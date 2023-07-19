@@ -29,14 +29,14 @@
         <div id="btn-attr-wrapper">
           <div class="btn-attr" id="btn-all" :class="{'selected': isSelectedAttr.all}" @click="onClickAttr('all')">ALL</div>
           <template v-for="attr in attrList">
-            <div class="btn-attr" :id="'btn-' + attr.key" :class="{'selected': isSelectedAttr[attr.key]}" @click="onClickAttr(attr.key)">{{attr.name}}</div>
+            <div class="btn-attr" v-cloak :id="'btn-' + attr.key" :class="{'selected': isSelectedAttr[attr.key]}" @click="onClickAttr(attr.key)">{{attr.name}}</div>
           </template>
         </div>
       </div>
       <div class="search-cond">
         <label class="search-item" for="name">名称</label><!--
         --><select name="name" v-model="selectedName" @change="onChangeName">
-          <option v-for="maseki in nameList" :value="maseki.name">{{maseki.display}}</option>
+          <option v-cloak v-for="maseki in nameList" :value="maseki.name">{{maseki.display}}</option>
         </select>
       </div>
       <div class="search-cond">
@@ -52,7 +52,7 @@
       <div class="search-cond">
         <label class="search-item" for="effect">効果詳細</label><!--
         --><select name="effect" v-model="selectedEffect" @change="onChangeEffect">
-          <option v-for="maseki in effectList" :value="maseki.name">{{maseki.display}}</option>
+          <option v-cloak v-for="maseki in effectList" :value="maseki.name">{{maseki.display}}</option>
         </select>
       </div>
       <div class="search-cond">
@@ -73,14 +73,14 @@
       <div id="maseki-list">
         <div class="detail" v-for="maseki in masekiList">
           <div class="detail-title-wrapper">
-            <div class="detail-title">{{maseki.name}}</div>
-            <div :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div>
+            <div class="detail-title" v-cloak>{{maseki.name}}</div>
+            <div v-cloak :class="['detail-attr', 'attr-' + findAttrKeyByAttrName(attr)]" v-for="attr in maseki.attrList">{{attr}}</div>
           </div>
           <div v-for="enchant in maseki.enchantList">
-            <div class="detail-item">{{enchant.name}}</div><div class="detail-desc">{{enchant.effect}}</div>
+            <div class="detail-item" v-cloak>{{enchant.name}}</div><div class="detail-desc" v-cloak>{{enchant.effect}}</div>
           </div>
-          <div><div class="detail-item">魔法威力</div><div class="detail-desc-power">{{maseki.power}}%</div></div>
-          <div><div class="detail-item">魔法効果</div><div class="detail-desc">{{maseki.effect}}</div></div>
+          <div><div class="detail-item">魔法威力</div><div class="detail-desc-power" v-cloak>{{maseki.power}}%</div></div>
+          <div><div class="detail-item">魔法効果</div><div class="detail-desc" v-cloak>{{maseki.effect}}</div></div>
           <div>
             <div class="detail-item">魔法範囲</div>
             <div class="detail-range">
@@ -94,7 +94,7 @@
               </table>
             </div>
           </div>
-          <div v-if="maseki.note !== ''" style="margin-top: 2px;"><div class="detail-item">補足</div><div class="detail-desc">{{maseki.note}}</div></div>
+          <div v-if="maseki.note !== ''" style="margin-top: 2px;"><div class="detail-item">補足</div><div class="detail-desc" v-cloak>{{maseki.note}}</div></div>
         </div>
       </div>
     </template>
