@@ -42,10 +42,6 @@ function addMaseki(name, attrList, enchantList, powerList, effect, range, note =
         isAbnormal: attrList.length > 1 && /耐性/.test(enchantList[1][0])
     };
 
-    if (maseki.powerList.length === 1) {
-        console.log("上位の威力が漏れている可能性あり：" + maseki.name);
-    }
-
     masekiList.push(maseki);
 }
 

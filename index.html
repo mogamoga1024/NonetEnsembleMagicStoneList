@@ -61,8 +61,10 @@
         <label class="search-item" for="sort">並び順</label><!--
         --><select name="sort" v-model="selectedSort" @change="onChangeSort">
           <option value="default">デフォルト</option>
-          <option value="power">威力</option>
           <option value="range">範囲</option>
+          <option value="power-default">威力（初期値）</option>
+          <option value="power-level2">威力（中級）</option>
+          <option value="power-level3">威力（上級）</option>
         </select>
       </div>
     </div>

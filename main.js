@@ -200,11 +200,21 @@ const App = {
                 case "default":
                     this.masekiList.sort((a, b) => a.id - b.id);
                     break;
-                case "power":
-                    this.masekiList.sort((a, b) => b.powerList[0] - a.powerList[0]);
-                    break;
                 case "range":
                     this.masekiList.sort((a, b) => b.rangeSize - a.rangeSize);
+                    break;
+                case "power-default": // 威力（初期値）
+                    this.masekiList.sort((a, b) => b.powerList[0] - a.powerList[0]);
+                    break;
+                case "power-level2": // 威力（中級）
+                    this.masekiList.sort((a, b) => {
+                        let powerA = a.powerList.length === 3 ? a.powerList[1] : a.powerList[0];
+                        let powerB = b.powerList.length === 3 ? b.powerList[1] : b.powerList[0];
+                        return powerB - powerA;                        
+                    });
+                    break;
+                case "power-level3": // 威力（上級）
+                    this.masekiList.sort((a, b) => b.powerList[b.powerList.length - 1] - a.powerList[a.powerList.length - 1]);
                     break;
             }
         }
